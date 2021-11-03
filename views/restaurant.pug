@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  - let restaurant  = [{restaurantType:"Motel", price: 99$, capacity:"150 members"},{restaurantType:"Hotel", price: 111$, capacity:"90 members"},{restaurantType:"Lodge", price: 100$, capacity:"200 members"}]
+  div(class="container-fluid mt-3")
+  div(class="row")
+    each flight,index in flights
+        div(class="col-sm-4" onclick=`buy(${index})`) #{restaurant.restaurantType} - #{restaurant.price} - #{restaurant.capacity}
+    script.
+     
+      function buy(item)
+      {
+        alert(`Choosen restaurant ${item+1}`)
+      }
