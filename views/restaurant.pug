@@ -2,14 +2,14 @@ extends layout
 
 block content
   h1= title
-  - let restaurants  = [{restaurantType:"Motel", price: 99$, capacity:"150 members"},{restaurantType:"Hotel", price: 111$, capacity:"90 members"},{restaurantType:"Lodge", price: 100$, capacity:"200 members"}]
+  - let restaurants  = [{restaurantType:"Veg", price: 1000, capacity:"50 members"},{restaurantType:"Non-Veg", price: 800, capacity:"20 members"},{restaurantType:"Chinese", price: 400, capacity:"250 members"}]
   div(class="container-fluid mt-3")
   div(class="row")
     each restaurant,index in restaurants
         div(class="col-sm-4" onclick=`buy(${index})`) #{restaurant.restaurantType} - #{restaurant.price} - #{restaurant.capacity}
-    script. 
-    
-      function buy(item)
+    script.
+     
+      function buy(itemNo)
       {
-        alert(`Choosen restaurant ${item+1}`)
+        alert(`You purchased Item ${itemNo+1}`)
       }
